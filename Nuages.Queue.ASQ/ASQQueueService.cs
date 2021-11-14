@@ -5,6 +5,7 @@ namespace Nuages.Queue.ASQ;
 
 [ExcludeFromCodeCoverage]
 // ReSharper disable once InconsistentNaming
+// ReSharper disable once UnusedType.Global
 public class ASQQueueService : IASQQueueService
 {
     private readonly IQueueClientProvider _clientProvider;
