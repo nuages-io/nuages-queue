@@ -7,6 +7,12 @@
         <TargetFrameworks>net6.0;netcoreapp3.1</TargetFrameworks>
         <LangVersion>10</LangVersion>
         <PackageIconUrl>https://s3.ca-central-1.amazonaws.com/public.nuages.org/nuages.png</PackageIconUrl>
+        <Title>Nuages.Queue</Title>
+        <Authors>Nuages.io</Authors>
+        <Description>Nuages.Queue is a .NET Core C# library that provides functionalities to poll and process message from a queue.</Description>
+        <PackageLicenseUrl>https://s3.ca-central-1.amazonaws.com/public.nuages.org/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/nuages-io/nuages-queue</RepositoryUrl>
+        <RepositoryType>GitHub</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>
