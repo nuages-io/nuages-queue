@@ -2,21 +2,25 @@
 
     <PropertyGroup>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Nullable>enable</Nullable>        
         <TargetFrameworks>net6.0;netcoreapp3.1</TargetFrameworks>
         <LangVersion>10</LangVersion>
-        <PackageIconUrl>https://s3.ca-central-1.amazonaws.com/public.nuages.org/nuages.png</PackageIconUrl>
+        
         <Title>Nuages.Queue</Title>
         <Authors>Nuages.io</Authors>
         <Description>Nuages.Queue is a .NET Core C# library that provides functionalities to poll and process message from a queue.</Description>
         <PackageLicenseUrl>https://s3.ca-central-1.amazonaws.com/public.nuages.org/LICENSE</PackageLicenseUrl>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageIcon>nuages.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/nuages-io/nuages-queue</RepositoryUrl>
         <RepositoryType>GitHub</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>
+        <None Include="LICENSE" Pack="true" PackagePath="\" />
         <None Include="README.md" Pack="true" PackagePath="\" />
+        <None Include="nuages.png" Pack="true" PackagePath="\"/>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
