@@ -19,11 +19,11 @@
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath="\" />  
         
-        <None Update="LICENSE">
+        <None Include="LICENSE">
             <Pack>true</Pack>
             <PackagePath>/</PackagePath>
         </None>
-        <None Update="nuages.png">
+        <None Include="nuages.png">
             <Pack>true</Pack>
             <PackagePath>/</PackagePath>
         </None>
