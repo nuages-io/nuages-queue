@@ -4,30 +4,21 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <TargetFrameworks>net5.0;net6.0;netcoreapp3.1</TargetFrameworks>
+        <TargetFrameworks>net5.0;net6.0;netcoreapp3.1;netstandard2.1</TargetFrameworks>
         <LangVersion>10</LangVersion>
 
         <Title>Nuages.Queue</Title>
         <Authors>Nuages.io</Authors>
-        <Description>Nuages.Queue.SQS is a .NET Core C# library that provides functionalities to poll and process message from an AWS Simple Queue Service.</Description>
+        <Description>Nuages.Queue.SQS is a .NET Core C# library that provides functionalities to poll and process messages from an AWS Simple Queue Service.</Description>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageIcon>nuages.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/nuages-io/nuages-queue</RepositoryUrl>
         <RepositoryType>GitHub</RepositoryType>
     </PropertyGroup>
-
-
+    
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath="\" />
-        <None Include="LICENSE">
-          <Pack>true</Pack>
-          <PackagePath>/</PackagePath>
-        </None>
-        <None Include="nuages.png">
-          <Pack>true</Pack>
-          <PackagePath>/</PackagePath>
-        </None>
     </ItemGroup>
     
     <ItemGroup>

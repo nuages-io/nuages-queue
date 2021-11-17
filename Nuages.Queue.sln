@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuages.Queue.SQS", "Nuages.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuages.Queue.SQS.Tests", "Nuages.Queue.SQS.Tests\Nuages.Queue.SQS.Tests.csproj", "{E9D41D2C-0FD8-4502-A1FB-335D0027AEB5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{1BE35F96-7839-44E9-A5C6-FCBC929B2759}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuages.Queue.Samples.SQS", "Nuages.Queue.Samples.SQS\Nuages.Queue.Samples.SQS.csproj", "{8520CA93-80AC-42BF-B77E-5B8BC49FA42C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,12 @@ Global
 		{E9D41D2C-0FD8-4502-A1FB-335D0027AEB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9D41D2C-0FD8-4502-A1FB-335D0027AEB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9D41D2C-0FD8-4502-A1FB-335D0027AEB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8520CA93-80AC-42BF-B77E-5B8BC49FA42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8520CA93-80AC-42BF-B77E-5B8BC49FA42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8520CA93-80AC-42BF-B77E-5B8BC49FA42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8520CA93-80AC-42BF-B77E-5B8BC49FA42C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8520CA93-80AC-42BF-B77E-5B8BC49FA42C} = {1BE35F96-7839-44E9-A5C6-FCBC929B2759}
 	EndGlobalSection
 EndGlobal
