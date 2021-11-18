@@ -8,7 +8,7 @@ Two pre-build package are available on nuget :
 - [Nuages.Queue.ASQ](https://www.nuget.org/packages/Nuages.Queue.ASQ/) for Azure Storage Queue on Azure
 
 
-##Using Nuages.Queue.SQS
+## Using Nuages.Queue.SQS
 
 See [Nuages.Queue.Samples.SQS.Console](https://github.com/nuages-io/nuages-queue/tree/main/Nuages.Queue.Samples.SQS.Console) for a full working sample.
 
@@ -171,7 +171,7 @@ void AddSQS(IServiceCollection services, bool useProfile = true)
 ```
 
 
-##Using Nuages.Queue.ASQ
+## Using Nuages.Queue.ASQ
 
 The code is similar to the SQS sample.
 
