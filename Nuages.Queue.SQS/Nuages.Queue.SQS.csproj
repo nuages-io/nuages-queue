@@ -18,6 +18,17 @@
         <RepositoryType>GitHub</RepositoryType>
         <OutputType>Library</OutputType>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../LICENSE">
+            <Pack>true</Pack>
+            <PackagePath>/</PackagePath>
+        </None>
+        <None Include="../nuages.png">
+            <Pack>true</Pack>
+            <PackagePath>/</PackagePath>
+        </None>
+    </ItemGroup>
     
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath="\" />
