@@ -1,14 +1,14 @@
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Nuages.Queue.ASQ;
 
 namespace Nuages.Queue.Samples.ASQ.Console;
 
+// ReSharper disable once ClassNeverInstantiated.Global
 public class SampleWorker : QueueWorker<IASQQueueService>
 {
     private readonly ILogger<QueueWorker<IASQQueueService>> _logger;
 
-    public SampleWorker(IServiceProvider serviceProvider, ILogger<QueueWorker<IASQQueueService>> logger, IOptions<QueueWorkerOptions> options) : base(serviceProvider, logger, options)
+    public SampleWorker(IServiceProvider serviceProvider, ILogger<SampleWorker> logger, IOptions<QueueWorkerOptions> options) : base(serviceProvider, logger, options)
     {
         _logger = logger;
     }
@@ -17,6 +17,7 @@ public class SampleWorker : QueueWorker<IASQQueueService>
     {
         await Task.Run(() =>
         {
+            _logger.LogInformation("Message : {Message}", msg.Body);
             System.Console.WriteLine(msg.Body);
 
         });

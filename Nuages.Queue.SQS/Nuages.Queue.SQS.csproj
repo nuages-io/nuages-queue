@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Worker">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <TargetFrameworks>net5.0;net6.0;netcoreapp3.1</TargetFrameworks>
+ 
         <LangVersion>10</LangVersion>
 
         <Title>Nuages.Queue</Title>
@@ -28,6 +29,7 @@
 
     <ItemGroup>
       <PackageReference Include="AWSSDK.SQS" Version="3.7.1.37" />
+      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.0" />
     </ItemGroup>
 
 </Project>

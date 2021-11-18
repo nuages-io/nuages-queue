@@ -19,14 +19,7 @@ var hostBuilder = new HostBuilder()
         {
             services
                 .AddSingleton(configuration)
-                .AddSampleWorker(configuration); //This will create the first worker based on the appSettings.json config
-
-            //Use this to add additional workers. It may be for the same queue or for another queue
-            //.AddSingleton<IHostedService>(sp =>
-            //   TaskQueueWorker<IASQQueueService>.Create(sp, "test-queue-2")); 
-
-            //Connection string is provided by IQueueClientProvider.
-            //Provide another service implementation for IQueueClientProvider if you want to control the connection string by queue.
+                .AddQueueWorker<SampleWorker>(configuration); //This will create the first worker based on the appSettings.json config
         }
     );
 
@@ -43,6 +36,6 @@ async Task SendTestMessageAsync(IServiceProvider provider)
     var options = provider.GetRequiredService<IOptions<QueueWorkerOptions>>().Value;
 
     var  fullName = await queueService.GetQueueFullNameAsync(options.QueueName);
-    await queueService.EnqueueMessageAsync(fullName!, "Started");
+    await queueService.EnqueueMessageAsync(fullName!, "Started!!!");
 }
 

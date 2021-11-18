@@ -19,5 +19,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
    
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nuages.Queue.SQS\Nuages.Queue.SQS.csproj" />
+  </ItemGroup>
   
 </Project>

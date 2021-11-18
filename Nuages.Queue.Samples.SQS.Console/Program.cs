@@ -1,9 +1,6 @@
-﻿
-
-using Amazon;
+﻿using Amazon;
 using Amazon.Runtime;
 using Amazon.SQS;
-
 using Microsoft.Extensions.Options;
 using Nuages.Queue;
 using Nuages.Queue.Samples.SQS.Console;
@@ -21,7 +18,7 @@ var hostBuilder = new HostBuilder()
         {
             services
                 .AddSingleton(configuration)
-                .AddSampleWorker(configuration);
+                .AddQueueWorker<SampleWorker>(configuration);
 
             AddSQS(services);
         }
@@ -39,7 +36,7 @@ async Task SendTestMessageAsync(IServiceProvider provider)
     var options = provider.GetRequiredService<IOptions<QueueWorkerOptions>>().Value;
 
     var  fullName = await queueService.GetQueueFullNameAsync(options.QueueName);
-    await queueService.EnqueueMessageAsync(fullName!, "Started");
+    await queueService.EnqueueMessageAsync(fullName!, "Started!!!");
 }
 
 // ReSharper disable once InconsistentNaming

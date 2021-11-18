@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Nuages.Queue.SQS;
 
@@ -8,7 +7,7 @@ public class SampleWorker : QueueWorker<ISQSQueueService>
 {
     private readonly ILogger<QueueWorker<ISQSQueueService>> _logger;
 
-    public SampleWorker(IServiceProvider serviceProvider, ILogger<QueueWorker<ISQSQueueService>> logger, IOptions<QueueWorkerOptions> options) : base(serviceProvider, logger, options)
+    public SampleWorker(IServiceProvider serviceProvider, ILogger<SampleWorker> logger, IOptions<QueueWorkerOptions> options) : base(serviceProvider, logger, options)
     {
         _logger = logger;
     }
@@ -17,7 +16,9 @@ public class SampleWorker : QueueWorker<ISQSQueueService>
     {
         await Task.Run(() =>
         {
-            System.Console.WriteLine(msg.Body);
+            _logger.LogInformation("Message : {Message}", msg.Body);
+            
+            Console.WriteLine(msg.Body);
 
         });
        
