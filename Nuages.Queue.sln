@@ -10,7 +10,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuages.Queue.SQS.Tests", "N
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{1BE35F96-7839-44E9-A5C6-FCBC929B2759}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuages.Queue.Samples.SQS", "Nuages.Queue.Samples.SQS\Nuages.Queue.Samples.SQS.csproj", "{8520CA93-80AC-42BF-B77E-5B8BC49FA42C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuages.Queue.Samples.SQS.Console", "Nuages.Queue.Samples.SQS.Console\Nuages.Queue.Samples.SQS.Console.csproj", "{8520CA93-80AC-42BF-B77E-5B8BC49FA42C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuages.Queue.Samples.ASQ.Console", "Nuages.Queue.Samples.ASQ.Console\Nuages.Queue.Samples.ASQ.Console.csproj", "{1C313B84-306B-4F1E-858A-C3B6FDF463FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuages.Queue.Samples.Simple.Console", "Nuages.Queue.Samples.Simple.Console\Nuages.Queue.Samples.Simple.Console.csproj", "{0120DACF-902C-46CE-BDD7-7664A4421F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuages.Queue.Samples.SQS.Web", "Nuages.Queue.Samples.SQS.Web\Nuages.Queue.Samples.SQS.Web.csproj", "{D6DB34B1-9B7B-4152-BFC1-255D413DC298}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,8 +44,23 @@ Global
 		{8520CA93-80AC-42BF-B77E-5B8BC49FA42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8520CA93-80AC-42BF-B77E-5B8BC49FA42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8520CA93-80AC-42BF-B77E-5B8BC49FA42C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C313B84-306B-4F1E-858A-C3B6FDF463FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C313B84-306B-4F1E-858A-C3B6FDF463FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C313B84-306B-4F1E-858A-C3B6FDF463FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C313B84-306B-4F1E-858A-C3B6FDF463FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0120DACF-902C-46CE-BDD7-7664A4421F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0120DACF-902C-46CE-BDD7-7664A4421F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0120DACF-902C-46CE-BDD7-7664A4421F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0120DACF-902C-46CE-BDD7-7664A4421F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6DB34B1-9B7B-4152-BFC1-255D413DC298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6DB34B1-9B7B-4152-BFC1-255D413DC298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6DB34B1-9B7B-4152-BFC1-255D413DC298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6DB34B1-9B7B-4152-BFC1-255D413DC298}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8520CA93-80AC-42BF-B77E-5B8BC49FA42C} = {1BE35F96-7839-44E9-A5C6-FCBC929B2759}
+		{1C313B84-306B-4F1E-858A-C3B6FDF463FD} = {1BE35F96-7839-44E9-A5C6-FCBC929B2759}
+		{0120DACF-902C-46CE-BDD7-7664A4421F96} = {1BE35F96-7839-44E9-A5C6-FCBC929B2759}
+		{D6DB34B1-9B7B-4152-BFC1-255D413DC298} = {1BE35F96-7839-44E9-A5C6-FCBC929B2759}
 	EndGlobalSection
 EndGlobal

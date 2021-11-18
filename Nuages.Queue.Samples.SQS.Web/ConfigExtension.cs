@@ -1,6 +1,5 @@
-namespace Nuages.Queue.Samples.SQS;
+namespace Nuages.Queue.Samples.SQS.Web;
 
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

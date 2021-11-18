@@ -2,7 +2,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Nuages.Queue.SQS;
 
-namespace Nuages.Queue.Samples.SQS;
+namespace Nuages.Queue.Samples.SQS.Console;
 
 public class SampleWorker : QueueWorker<ISQSQueueService>
 {
@@ -17,7 +17,7 @@ public class SampleWorker : QueueWorker<ISQSQueueService>
     {
         await Task.Run(() =>
         {
-            Console.WriteLine(msg.Body);
+            System.Console.WriteLine(msg.Body);
 
         });
        

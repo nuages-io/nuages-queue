@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Worker">
 
     <PropertyGroup>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <TargetFrameworks>net5.0;net6.0;netcoreapp3.1;netstandard2.1</TargetFrameworks>
+        <TargetFrameworks>net5.0;net6.0;netcoreapp3.1</TargetFrameworks>
         <LangVersion>10</LangVersion>
 
         <Title>Nuages.Queue</Title>
@@ -15,6 +15,7 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/nuages-io/nuages-queue</RepositoryUrl>
         <RepositoryType>GitHub</RepositoryType>
+        <OutputType>Library</OutputType>
     </PropertyGroup>
     
     <ItemGroup>
@@ -27,7 +28,6 @@
 
     <ItemGroup>
       <PackageReference Include="AWSSDK.SQS" Version="3.7.1.37" />
-      <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
     </ItemGroup>
 
 </Project>

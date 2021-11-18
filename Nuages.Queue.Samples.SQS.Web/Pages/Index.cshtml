@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="col-4">
+    <h3>Enter message text. </h3>
+    <h4>Look in the console output for results</h4>
+    <form method="post" class="row">
+        <input name="message" type="text" placeholder="Enter message text" class="form-control"/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

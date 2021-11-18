@@ -135,12 +135,12 @@ public abstract class QueueWorker<T> : BackgroundService where T : IQueueService
 
     protected virtual void LogInformation(string message)
     {
-        Logger.LogInformation("{Message} : {QueueNameFullName}",message, QueueNameFullName);
+        Logger.LogInformation("{Message} : Queue = {QueueNameFullName}",message, QueueNameFullName);
     }
     
     protected virtual void LogError(string message)
     {
-        Logger.LogError("{Message} : {QueueNameFullName}",message, QueueNameFullName);
+        Logger.LogError("{Message} : Queue = {QueueNameFullName}",message, QueueNameFullName);
     }
     
     protected abstract Task<bool> ProcessMessageAsync(QueueMessage msg);

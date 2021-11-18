@@ -3,13 +3,10 @@
 using Amazon;
 using Amazon.Runtime;
 using Amazon.SQS;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+
 using Microsoft.Extensions.Options;
 using Nuages.Queue;
-using Nuages.Queue.Samples.SQS;
+using Nuages.Queue.Samples.SQS.Console;
 using Nuages.Queue.SQS;
 
 var configuration = new ConfigurationBuilder()
