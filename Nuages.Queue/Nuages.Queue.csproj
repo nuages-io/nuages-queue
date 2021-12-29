@@ -3,7 +3,7 @@
     <PropertyGroup>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>        
-        <TargetFrameworks>net5.0;net6.0;netcoreapp3.1;netstandard2.1</TargetFrameworks>
+        <TargetFramework>net6.0</TargetFramework>
         <LangVersion>10</LangVersion>
         
         <Title>Nuages.Queue</Title>

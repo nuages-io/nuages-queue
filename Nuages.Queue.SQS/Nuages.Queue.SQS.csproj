@@ -4,7 +4,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <TargetFrameworks>net5.0;net6.0;netcoreapp3.1</TargetFrameworks>
+        <TargetFramework>net6.0</TargetFramework>
  
         <LangVersion>10</LangVersion>
 
@@ -39,7 +39,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="AWSSDK.SQS" Version="3.7.1.37" />
+      <PackageReference Include="AWSSDK.SQS" Version="3.7.2.6" />
       <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.0" />
     </ItemGroup>
 
