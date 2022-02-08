@@ -32,7 +32,7 @@ jobs:
     - name: Pack
       run: | 
         dotnet pack Nuages.Queue/Nuages.Queue.csproj --output ./nupkgs -p:PackageVersion=${VERSION} -c RELEASE
-        dotnet pack Nuages.QueueSQS/Nuages.QueueSQS.csproj --output ./nupkgs -p:PackageVersion=${VERSION} -c RELEASE
+        dotnet pack Nuages.Queue.SQS/Nuages.Queue.SQS.csproj --output ./nupkgs -p:PackageVersion=${VERSION} -c RELEASE
         dotnet pack Nuages.Queue.ASQ/Nuages.Queue.ASQ.csproj --output ./nupkgs -p:PackageVersion=${VERSION} -c RELEASE
     - name: Push
       run: dotnet nuget push ./nupkgs/*.nupkg -k ${{ secrets.NUGETKEY }} -s nuget.org
