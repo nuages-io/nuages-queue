@@ -7,7 +7,8 @@ public class SampleWorker : QueueWorker<ISQSQueueService>
 {
     private readonly ILogger<QueueWorker<ISQSQueueService>> _logger;
 
-    public SampleWorker(IServiceProvider serviceProvider, ILogger<SampleWorker> logger, IOptions<QueueWorkerOptions> options) : base(serviceProvider, logger, options)
+    public SampleWorker(IServiceProvider serviceProvider, ILogger<SampleWorker> logger, IOptions<QueueWorkerOptions> options) 
+        : base(serviceProvider, logger, options)
     {
         _logger = logger;
     }
