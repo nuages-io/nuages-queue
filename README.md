@@ -1,4 +1,4 @@
-# Nuages.Queue
+# Nuages.Queue <img alt="Nuget" src="https://img.shields.io/nuget/v/Nuages.Queue?style=flat-square"> ![example workflow](https://github.com/nuages-io/nuages-queue/actions/workflows/nuget.yml/badge.svg)
 
 Nuages.Queue introduce the QueryWorker abstract class which is responsible to get message from a queue. The class needs to inherit from QueueWorker<> in order to provide overload for queue manipulations.
 
