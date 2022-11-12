@@ -5,7 +5,7 @@ using Nuages.Queue.ASQ;
 using Nuages.Queue.Samples.ASQ.Console;
 
 var configuration = new ConfigurationBuilder()
-    .SetBasePath(Directory.GetParent(AppContext.BaseDirectory)?.FullName)
+    .SetBasePath(Directory.GetParent(AppContext.BaseDirectory)?.FullName!)
     .AddJsonFile("appsettings.json", true)
     .AddJsonFile("appsettings.local.json", true)
     .Build();

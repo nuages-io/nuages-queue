@@ -28,7 +28,7 @@ public class IndexModel : PageModel
         var message = Request.Form["message"];
         
         var  fullName = await _isqsQueueService.GetQueueFullNameAsync(_options.QueueName);
-        await _isqsQueueService.EnqueueMessageAsync(fullName!, message);
+        await _isqsQueueService.EnqueueMessageAsync(fullName!, message!);
 
     }
 }
