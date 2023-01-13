@@ -1,5 +1,4 @@
 using Amazon.SQS;
-using Nuages.Queue;
 using Nuages.Queue.Samples.SQS.Web;
 using Nuages.Queue.SQS;
 // ReSharper disable UnusedParameter.Local
@@ -25,13 +24,28 @@ void ConfigureTaskQueue(WebApplicationBuilder webApplicationBuilder)
     webApplicationBuilder.Configuration.AddJsonFile("appsettings.local.json", true);
     webApplicationBuilder.Services.AddDefaultAWSOptions(webApplicationBuilder.Configuration.GetAWSOptions())
         .AddAWSService<IAmazonSQS>();
-    webApplicationBuilder.Services.AddSampleWorker(webApplicationBuilder.Configuration)
-        .Configure<QueueOptions>(options =>
+
+    webApplicationBuilder.Services.AddSQSQueue()
+    .AddSampleWorker(webApplicationBuilder.Configuration, "SampleWorker",
+            options =>
+            {
+                //set options here  
+            },
+            options =>
+            {
+                //set options here  
+                options.QueueName = "Queue1";
+            })
+    .AddSampleWorker(webApplicationBuilder.Configuration, "SampleWorker2",
+        options =>
         {
             //set options here  
-        }).Configure<QueueWorkerOptions>(options =>
+        },
+        options =>
         {
-          //set options here  
+            //set options here  
+            options.QueueName = "Queue2";
         });
+       
 }
 

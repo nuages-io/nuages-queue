@@ -25,13 +25,13 @@ public abstract class QueueWorker<T> : BackgroundService where T : IQueueService
         
     protected readonly QueueWorkerOptions Options;
         
-    protected QueueWorker(IServiceProvider serviceProvider, ILogger<QueueWorker<T>> logger, 
-        IOptions<QueueWorkerOptions> options)
+    protected QueueWorker(string name, IServiceProvider serviceProvider, ILogger<QueueWorker<T>> logger, 
+        IOptionsMonitor<QueueWorkerOptions> options)
     {
         ServiceProvider = serviceProvider;
         Logger = logger;
             
-        Options = options.Value;
+        Options = options.Get(name);
            
     }
         

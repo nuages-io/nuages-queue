@@ -12,14 +12,20 @@ var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.local.json", true)
     .Build();
 
+const string workerName = "SampleWorker";
+
 var hostBuilder = new HostBuilder()
     .ConfigureLogging(logging => { logging.AddConsole(); })
     .ConfigureServices(services =>
         {
             services
                 .AddSingleton(configuration)
-                .AddQueueWorker<SampleWorker>(configuration);
-
+                .AddSQSQueue()
+                .Configure<QueueWorkerOptions>(workerName, configuration.GetSection("QueueWorker"))
+                .Configure<QueueOptions>(workerName, configuration.GetSection("Queues"))
+                .AddSingleton<IHostedService>(x =>
+                    ActivatorUtilities.CreateInstance<SampleWorker>(x, workerName));
+                
             AddSQS(services);
         }
     );
@@ -33,7 +39,7 @@ await host.RunAsync();
 async Task SendTestMessageAsync(IServiceProvider provider)
 {
     var queueService = provider.GetRequiredService<ISQSQueueService>();
-    var options = provider.GetRequiredService<IOptions<QueueWorkerOptions>>().Value;
+    var options = provider.GetRequiredService<IOptionsMonitor<QueueWorkerOptions>>().Get("SampleWorker");
 
     var  fullName = await queueService.GetQueueFullNameAsync(options.QueueName);
     await queueService.EnqueueMessageAsync(fullName!, "Started!!!");

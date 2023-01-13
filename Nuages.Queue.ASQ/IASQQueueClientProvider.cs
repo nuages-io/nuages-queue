@@ -2,7 +2,8 @@ using Azure.Storage.Queues;
 
 namespace Nuages.Queue.ASQ;
 
-public interface IQueueClientProvider
+// ReSharper disable once InconsistentNaming
+public interface IASQQueueClientProvider
 {
     QueueClient GetClient(string queueName);
 }

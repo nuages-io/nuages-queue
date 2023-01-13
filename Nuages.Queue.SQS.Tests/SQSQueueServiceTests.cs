@@ -23,7 +23,7 @@ public class SQSQueueServiceTests
              MessageId = Guid.NewGuid().ToString()
          });
 
-         var clientProvider = new QueueClientProvider(sqs.Object);
+         var clientProvider = new SQSQueueClientProvider(sqs.Object);
 
          IQueueService queueService = new SQSQueueService(clientProvider, Options.Create(new QueueOptions
          {
@@ -71,7 +71,7 @@ public class SQSQueueServiceTests
              ReceiptHandle = Guid.NewGuid().ToString()
          };
 
-         var clientProvider = new Mock<IQueueClientProvider>();
+         var clientProvider = new Mock<ISQSQueueClientProvider>();
          
          var sqs = new Mock<IAmazonSQS>();
 
@@ -98,7 +98,7 @@ public class SQSQueueServiceTests
      [Fact]
      public async Task DeleteMessage()
      {
-         var clientProvider = new Mock<IQueueClientProvider>();
+         var clientProvider = new Mock<ISQSQueueClientProvider>();
          
          var sqs = new Mock<IAmazonSQS>();
 

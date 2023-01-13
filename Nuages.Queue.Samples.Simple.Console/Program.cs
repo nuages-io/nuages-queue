@@ -15,7 +15,7 @@ var hostBuilder = new HostBuilder()
         {
             services
                 .AddSingleton(configuration)
-                .AddSimpleTaskQueueWorker(configuration);
+                .AddSimpleTaskQueueWorker( configuration, "SampleWorker");
 
             //Use this to add additional workers. It may be for the same queue or for another queue
             //.AddSingleton<IHostedService>(sp =>

@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 using Nuages.Queue.Samples.Simple.Console.SimpleQueue.Queue;
 
 
@@ -11,38 +9,19 @@ public static class SimpleTaskConfig
     // ReSharper disable once InconsistentNaming
     // ReSharper disable once UnusedMethodReturnValue.Global
     public static IServiceCollection AddSimpleTaskQueueWorker(this IServiceCollection services, 
-        IConfiguration configuration,
+        IConfiguration configuration, string name,
         // ReSharper disable once InconsistentNaming
         Action<QueueWorkerOptions>? configureWorker = null)
     {
-        services.Configure<QueueWorkerOptions>(configuration.GetSection("TaskQueueWorker"));
+        services.Configure<QueueWorkerOptions>(name, configuration.GetSection("QueueWorker"));
         
         if (configureWorker != null)
             services.Configure(configureWorker);
-        
-        services.PostConfigure<QueueWorkerOptions>(options =>
-        {
-            var configErrors = ValidationErrors(options).ToArray();
-            // ReSharper disable once InvertIf
-            if (configErrors.Any())
-            {
-                var aggregateErrors = string.Join(",", configErrors);
-                var count = configErrors.Length;
-                var configType = options.GetType().Name;
-                throw new ApplicationException(
-                    $"Found {count} configuration error(s) in {configType}: {aggregateErrors}");
-            }
-        });
 
         return services.AddSingleton<ISimpleQueueService, SimpleQueueService>()
-            .AddHostedService<SimpleQueueWorker>();
+            .AddSingleton<IHostedService>(x =>
+                ActivatorUtilities.CreateInstance<SimpleQueueWorker>(x, name));
     }
 
-    private static IEnumerable<string> ValidationErrors(object option)
-    {
-        var context = new ValidationContext(option, null);
-        var results = new List<ValidationResult>();
-        Validator.TryValidateObject(option, context, results, true);
-        foreach (var validationResult in results) yield return validationResult.ErrorMessage ?? "?";
-    }
+   
 }

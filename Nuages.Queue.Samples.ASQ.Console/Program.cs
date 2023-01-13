@@ -19,7 +19,28 @@ var hostBuilder = new HostBuilder()
         {
             services
                 .AddSingleton(configuration)
-                .AddQueueWorker<SampleWorker>(configuration); //This will create the first worker based on the appSettings.json config
+                .Configure<ASQQueueClientOptions>(configuration.GetSection("ASQ"))
+                .AddASQQueue()
+                .AddSampleWorker(configuration, "SampleWorker",
+                    _ =>
+                    {
+                        //set options here  
+                    },
+                    options =>
+                    {
+                        //set options here  
+                        options.QueueName = "test-queue";
+                    })
+                .AddSampleWorker(configuration, "SampleWorker2",
+                    _ =>
+                    {
+                        //set options here  
+                    },
+                    options =>
+                    {
+                        //set options here  
+                        options.QueueName = "test-queue-2";
+                    });
         }
     );
 
@@ -33,7 +54,7 @@ await host.RunAsync();
 async Task SendTestMessageAsync(IServiceProvider provider)
 {
     var queueService = provider.GetRequiredService<IASQQueueService>();
-    var options = provider.GetRequiredService<IOptions<QueueWorkerOptions>>().Value;
+    var options = provider.GetRequiredService<IOptionsMonitor<QueueWorkerOptions>>().Get("SampleWorker");
 
     var  fullName = await queueService.GetQueueFullNameAsync(options.QueueName);
     await queueService.EnqueueMessageAsync(fullName!, "Started!!!");

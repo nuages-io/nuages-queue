@@ -7,10 +7,10 @@ namespace Nuages.Queue.SQS;
 // ReSharper disable once InconsistentNaming
 public class SQSQueueService : ISQSQueueService
 {
-    private readonly IQueueClientProvider _sqsProvider;
+    private readonly ISQSQueueClientProvider _sqsProvider;
     private readonly QueueOptions _queryOptions;
 
-    public SQSQueueService(IQueueClientProvider sqsProvider, IOptions<QueueOptions> queryOptions)
+    public SQSQueueService(ISQSQueueClientProvider sqsProvider, IOptions<QueueOptions> queryOptions)
     {
         _sqsProvider = sqsProvider;
         _queryOptions = queryOptions.Value;
